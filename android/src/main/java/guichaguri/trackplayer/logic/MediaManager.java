@@ -60,13 +60,8 @@ public class MediaManager {
     }
 
     public Playback createLocalPlayback() {
-        if(LibHelper.isExoPlayerAvailable()) {
-            Log.i(Utils.TAG, "Creating an ExoPlayer instance...");
-            return new ExoPlayback(service, this, playbackOptions);
-        } else {
-            Log.i(Utils.TAG, "Creating a MediaPlayer instance...");
-            return new AndroidPlayback(service, this, playbackOptions);
-        }
+        Log.i(Utils.TAG, "Creating a MediaPlayer instance...");
+        return new AndroidPlayback(service, this, playbackOptions);
     }
 
     public void setupPlayer(Bundle options) {
